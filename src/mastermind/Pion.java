@@ -1,4 +1,6 @@
 /*
+Classe crée par Ninon PREVOT et SORTAIS Cassandra SORTAIS découverte du projet donc c'est pour cela qu'on l'a fait à 2
+20/11/2024
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
