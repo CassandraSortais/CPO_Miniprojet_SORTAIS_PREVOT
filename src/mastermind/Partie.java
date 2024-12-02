@@ -16,17 +16,20 @@ import java.util.Scanner;
 
 public class Partie {
 
-    private PlateauDeJeu plateau;  //gère la logique du jeu, comme les tentatives, les réponses, et les conditions de victoire ou de défaite.
-    private ArrayList<Character> couleursDisponibles;
+    private PlateauDeJeu plateau; // Gère la logique du jeu
+    private ArrayList<Character> couleursDisponibles; // Couleurs disponibles pour les pions
+    private Pion[][] matricePions; // Matrice pour stocker les pions des tentatives (12 lignes x 4 colonnes)
 
-    // Le constructeur prépare une partie en configurant toutes les règles nécessaires comme la combinaison secrète, le plateau de jeu et les couleurs
+    // Constructeur
     public Partie(int tailleCombinaison, int nbToursMax, List<Character> couleursDisponibles) {
-        Combinaison combinaisonSecrete = Combinaison.genererAleatoire(tailleCombinaison, (ArrayList<Character>) couleursDisponibles); // 
+        Combinaison combinaisonSecrete = Combinaison.genererAleatoire(tailleCombinaison, (ArrayList<Character>) couleursDisponibles);
         this.plateau = new PlateauDeJeu(combinaisonSecrete, nbToursMax);
         this.couleursDisponibles = new ArrayList<>(couleursDisponibles);
+        this.matricePions = new Pion[12][4]; // 12 tentatives, 4 pions par tentative
     }
 
-    public void afficherRegles() {     // Méthode pour afficher les règles du jeu et les explications qui aide le joeur à comprendre comment jouer
+    // Méthode pour afficher les règles du jeu
+    public void afficherRegles() {
         System.out.println("Bienvenue dans le jeu Mastermind !");
         System.out.println("Règles du jeu :");
         System.out.println("- Vous devez deviner la combinaison secrète.");
@@ -36,12 +39,18 @@ public class Partie {
         System.out.println("- Pour finir, vous devez trouver la combinaison secrète avant d'atteindre le nombre maximum de tentatives.");
     }
 
-    public void lancerPartie() {     //Cette méthode lance une partie et enregistre la progression du jeu 
+    // Méthode pour lancer la partie
+    public void lancerPartie() {
         Scanner scanner = new Scanner(System.in);
-        while (!plateau.estVictoire() && !plateau.estDefaite()) {
+        int tour = 0;
+
+        while (!plateau.estVictoire() && !plateau.estDefaite() && tour < 12) {
             plateau.afficherPlateau();
+            afficherMatrice(); // Affiche la matrice des tentatives
+
             System.out.println("\nProposez une combinaison :");
             String combinaisonEntree = scanner.nextLine().toUpperCase();
+
             if (combinaisonEntree.length() != 4) {
                 System.out.println("Erreur : La combinaison doit avoir exactement 4 pions.");
                 continue;
@@ -57,28 +66,58 @@ public class Partie {
                 pionsTentative[i] = new Pion(couleur);
             }
 
-            // Création de la tentative et ajout au plateau
+            ajouterTentative(tour, pionsTentative); // Ajoute la tentative à la matrice
             Combinaison tentative = new Combinaison(pionsTentative);
             plateau.proposerCombinaison(tentative);
 
-            // On vérifie si c'est une victoire ou une défaite
             if (plateau.estVictoire()) {
                 System.out.println("Bravo ! Vous avez trouvé la combinaison secrète !");
                 break;
-            } else if (plateau.estDefaite()) {
+            } else if (plateau.estDefaite() || tour == 11) {
                 System.out.println("Dommage, vous avez perdu ! Le nombre maximum de tentatives est atteint.");
                 break;
             }
+
+            tour++; // Passe au tour suivant
         }
         scanner.close();
     }
 
-    // Cette méthode termine la partie et affiche le résultat
+    // Méthode pour terminer la partie
     public void terminerPartie() {
         if (plateau.estVictoire()) {
             System.out.println("Félicitations ! Vous avez gagné !");
         } else {
             System.out.println("Vous avez perdu ! La combinaison secrète était : " + plateau.getCombinaisonSecrete());
+        }
+    }
+
+    // Méthode pour ajouter une tentative dans la matrice
+    public void ajouterTentative(int tour, Pion[] pions) {
+        if (tour < 0 || tour >= 12) {
+            System.out.println("Erreur : Le numéro de tour est invalide.");
+            return;
+        }
+        if (pions.length != 4) {
+            System.out.println("Erreur : Une tentative doit contenir exactement 4 pions.");
+            return;
+        }
+        matricePions[tour] = pions; // Ajout des pions dans la ligne correspondante
+    }
+
+    // Méthode pour afficher la matrice
+    public void afficherMatrice() {
+        System.out.println("Plateau des tentatives :");
+        for (int i = 0; i < matricePions.length; i++) {
+            System.out.print("Tour " + (i + 1) + ": ");
+            for (int j = 0; j < matricePions[i].length; j++) {
+                if (matricePions[i][j] != null) {
+                    System.out.print(matricePions[i][j].getCouleur() + " "); // Affiche la couleur du pion
+                } else {
+                    System.out.print("_ "); // Place vide
+                }
+            }
+            System.out.println();
         }
     }
 }

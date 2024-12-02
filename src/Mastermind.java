@@ -1,15 +1,17 @@
-/*
-TP MINI PROJET - MASTERMIND
+/*TP MINI PROJET - MASTERMIND
 TDC
 SORTAIS CASSANDRA
 PREVOT NINON 
 20 Novembre 2024
 27Nomvembre 2024
- 
  */
-package mastermind;
+
 
 import java.util.ArrayList;
+import mastermind.Combinaison;
+import mastermind.Partie;
+import mastermind.Pion;
+import mastermind.PlateauDeJeu;
 
 /**
  *
@@ -86,7 +88,7 @@ public class Mastermind {
         } else {
             System.out.println("\nLa partie continue !");
         }
-         // Création d'une instance de Partie avec 4 couleurs possibles et 10 tours max
+        // Création d'une instance de Partie avec 4 couleurs possibles et 10 tours max
         Partie partie = new Partie(4, 10, couleursDisponibles);
 
         // Lancer la partie
