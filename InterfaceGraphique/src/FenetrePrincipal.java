@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.JButton;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -7,128 +11,44 @@
  *
  * @author cassandrasortais
  */
-mport javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class FenetrePrincipal extends javax.swing.JFrame {
 
-    private JButton[][] boutonsGrille; // Boutons pour la grille des tentatives
-    private JButton boutonProposer; // Bouton pour proposer une tentative
-    private JTextArea zoneResultats; // Zone pour afficher les résultats
-    private JTextField[] champsTentative; // Champs pour entrer une tentative
-    private Partie partie; // Partie en cours
+    // Création du tableau de boutons
+    private JButton[] boutons = new JButton[48];
 
+    /**
+     * Creates new form FenetrePrincipal
+     */
     public FenetrePrincipal() {
-        initComponents();
-        // Initialiser une partie avec des paramètres par défaut
-        partie = new Partie(4, 12, java.util.Arrays.asList('R', 'B', 'G', 'Y', 'P', 'O'));
-        setupUI();
-    }
-
-    private void setupUI() {
-        // Définir un layout principal
-        this.setLayout(new BorderLayout());
-
-        // Panneau central pour la grille des tentatives
-        JPanel panneauGrille = new JPanel();
-        panneauGrille.setLayout(new GridLayout(12, 4, 5, 5)); // 12 lignes x 4 colonnes, espacement 5px
-        boutonsGrille = new JButton[12][4];
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 4; j++) {
-                boutonsGrille[i][j] = new JButton("_"); // Placeholder
-                boutonsGrille[i][j].setEnabled(false); // Les boutons ne sont pas cliquables
-                panneauGrille.add(boutonsGrille[i][j]);
+        initComponents(); // Initialise les composants créés par le GUI Builder
+        
+        // Boucle pour récupérer chaque bouton depuis le GUI Builder (btn1, btn2, ..., btn48)
+        for (int i = 0; i < 48; i++) {
+            // Création du nom de chaque bouton
+            String nomBouton = "btn" + (i + 1); // "btn1", "btn2", ..., "btn48"
+            
+            try {
+                // Utilisation de la réflexion pour obtenir chaque bouton en fonction de son nom
+                boutons[i] = (JButton) this.getClass().getDeclaredField(nomBouton).get(this);
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace(); // Affiche l'erreur si le bouton n'est pas trouvé
             }
         }
-        this.add(panneauGrille, BorderLayout.CENTER);
 
-        // Panneau pour la saisie et les actions
-        JPanel panneauActions = new JPanel();
-        panneauActions.setLayout(new FlowLayout());
-
-        // Champs de saisie pour une tentative
-        champsTentative = new JTextField[4];
-        for (int i = 0; i < 4; i++) {
-            champsTentative[i] = new JTextField(2); // 2 colonnes pour chaque champ
-            panneauActions.add(champsTentative[i]);
-        }
-
-        // Bouton pour proposer une tentative
-        boutonProposer = new JButton("Proposer");
-        boutonProposer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                proposerTentative();
-            }
-        });
-        panneauActions.add(boutonProposer);
-
-        // Ajouter le panneau des actions au bas
-        this.add(panneauActions, BorderLayout.SOUTH);
-
-        // Zone pour afficher les résultats
-        zoneResultats = new JTextArea(10, 30);
-        zoneResultats.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(zoneResultats);
-        this.add(scrollPane, BorderLayout.EAST);
-
-        // Configuration de la fenêtre principale
-        this.setTitle("Jeu Mastermind");
-        this.setSize(600, 500);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
-    }
-
-    // Gérer la logique lorsqu'une tentative est proposée
-    private void proposerTentative() {
-        String tentative = "";
-        for (JTextField champ : champsTentative) {
-            tentative += champ.getText().toUpperCase().trim();
-        }
-
-        if (tentative.length() != 4) {
-            JOptionPane.showMessageDialog(this, "Veuillez entrer une combinaison de 4 couleurs.");
-            return;
-        }
-
-        // Convertir la tentative en tableau de Pions
-        Pion[] pions = new Pion[4];
-        for (int i = 0; i < 4; i++) {
-            char couleur = tentative.charAt(i);
-            pions[i] = new Pion(couleur);
-        }
-
-        // Proposer la tentative à la partie
-        Combinaison combinaison = new Combinaison(pions);
-        partie.plateau.proposerCombinaison(combinaison);
-
-        // Mettre à jour l'affichage de la grille
-        int tour = partie.plateau.tentatives.size() - 1;
-        for (int i = 0; i < 4; i++) {
-            boutonsGrille[tour][i].setText(String.valueOf(pions[i].getCouleur()));
-        }
-
-        // Mettre à jour les résultats
-        zoneResultats.append("Tentative " + (tour + 1) + ": " + tentative + " -> " +
-                partie.plateau.reponses.get(tour) + "\n");
-
-        // Vérifier les conditions de victoire ou de défaite
-        if (partie.plateau.estVictoire()) {
-            JOptionPane.showMessageDialog(this, "Bravo ! Vous avez trouvé la combinaison secrète !");
-            boutonProposer.setEnabled(false);
-        } else if (partie.plateau.estDefaite()) {
-            JOptionPane.showMessageDialog(this, "Dommage ! Vous avez perdu. La combinaison secrète était : " +
-                    new String(partie.plateau.combinaisonSecrete.getElements()));
-            boutonProposer.setEnabled(false);
+        // Ajouter des actions aux boutons
+        for (int i = 0; i < 48; i++) {
+            // On ajoute un ActionListener à chaque bouton
+            int index = i; // Variable pour capturer l'index de chaque bouton dans la boucle
+            boutons[i].addActionListener(e -> {
+                // Ce code s'exécute quand un bouton est cliqué
+                JButton boutonClique = (JButton) e.getSource(); // Récupère le bouton cliqué
+                boutonClique.setBackground(Color.RED);          // Change la couleur du bouton en rouge
+                // Tu peux ajouter d'autres actions ici si nécessaire
+            });
         }
     }
 
-    public static void main(String[] args) {
-        new FenetrePrincipal();
-    }
-}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -140,68 +60,267 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        Proposer = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        btn4 = new javax.swing.JButton();
+        btn5 = new javax.swing.JButton();
+        btn6 = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
+        btn8 = new javax.swing.JButton();
+        btn9 = new javax.swing.JButton();
+        btn10 = new javax.swing.JButton();
+        btn11 = new javax.swing.JButton();
+        btn12 = new javax.swing.JButton();
+        btn13 = new javax.swing.JButton();
+        btn14 = new javax.swing.JButton();
+        btn15 = new javax.swing.JButton();
+        btn16 = new javax.swing.JButton();
+        btn17 = new javax.swing.JButton();
+        btn18 = new javax.swing.JButton();
+        btn19 = new javax.swing.JButton();
+        btn20 = new javax.swing.JButton();
+        btn21 = new javax.swing.JButton();
+        btn22 = new javax.swing.JButton();
+        btn23 = new javax.swing.JButton();
+        btn24 = new javax.swing.JButton();
+        btn25 = new javax.swing.JButton();
+        btn26 = new javax.swing.JButton();
+        btn27 = new javax.swing.JButton();
+        btn28 = new javax.swing.JButton();
+        btn29 = new javax.swing.JButton();
+        btn30 = new javax.swing.JButton();
+        btn31 = new javax.swing.JButton();
+        btn32 = new javax.swing.JButton();
+        btn33 = new javax.swing.JButton();
+        btn34 = new javax.swing.JButton();
+        btn35 = new javax.swing.JButton();
+        btn36 = new javax.swing.JButton();
+        btn37 = new javax.swing.JButton();
+        btn38 = new javax.swing.JButton();
+        btn39 = new javax.swing.JButton();
+        btn40 = new javax.swing.JButton();
+        btn41 = new javax.swing.JButton();
+        btn42 = new javax.swing.JButton();
+        btn43 = new javax.swing.JButton();
+        btn44 = new javax.swing.JButton();
+        btn45 = new javax.swing.JButton();
+        btn46 = new javax.swing.JButton();
+        btn47 = new javax.swing.JButton();
+        btn48 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout(12, 4));
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 204));
+        jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
-        jTextField1.setText("jTextField1");
+        btn1.setBackground(new java.awt.Color(204, 204, 255));
+        btn1.setText("jButton1");
+        btn1.setName("btn1"); // NOI18N
+        jPanel1.add(btn1);
+        btn1.getAccessibleContext().setAccessibleDescription("");
 
-        Proposer.setText("jButton1");
+        btn2.setBackground(new java.awt.Color(204, 204, 255));
+        btn2.setText("jButton2");
+        jPanel1.add(btn2);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Proposer)
-                        .addGap(108, 108, 108))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(Proposer))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(197, Short.MAX_VALUE))
-        );
+        btn3.setBackground(new java.awt.Color(204, 204, 255));
+        btn3.setText("jButton3");
+        jPanel1.add(btn3);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
+        btn4.setBackground(new java.awt.Color(204, 204, 255));
+        btn4.setText("jButton4");
+        jPanel1.add(btn4);
+
+        btn5.setBackground(new java.awt.Color(204, 204, 255));
+        btn5.setText("jButton5");
+        jPanel1.add(btn5);
+
+        btn6.setBackground(new java.awt.Color(204, 204, 255));
+        btn6.setText("jButton6");
+        jPanel1.add(btn6);
+
+        btn7.setBackground(new java.awt.Color(204, 204, 255));
+        btn7.setText("jButton7");
+        jPanel1.add(btn7);
+
+        btn8.setBackground(new java.awt.Color(204, 204, 255));
+        btn8.setText("jButton8");
+        jPanel1.add(btn8);
+
+        btn9.setBackground(new java.awt.Color(204, 204, 255));
+        btn9.setText("jButton9");
+        jPanel1.add(btn9);
+
+        btn10.setBackground(new java.awt.Color(204, 204, 255));
+        btn10.setText("jButton10");
+        jPanel1.add(btn10);
+
+        btn11.setBackground(new java.awt.Color(204, 204, 255));
+        btn11.setText("jButton11");
+        jPanel1.add(btn11);
+
+        btn12.setBackground(new java.awt.Color(204, 204, 255));
+        btn12.setText("jButton12");
+        jPanel1.add(btn12);
+
+        btn13.setBackground(new java.awt.Color(204, 204, 255));
+        btn13.setText("jButton13");
+        jPanel1.add(btn13);
+
+        btn14.setBackground(new java.awt.Color(204, 204, 255));
+        btn14.setText("jButton14");
+        jPanel1.add(btn14);
+
+        btn15.setBackground(new java.awt.Color(204, 204, 255));
+        btn15.setText("jButton15");
+        jPanel1.add(btn15);
+
+        btn16.setBackground(new java.awt.Color(204, 204, 255));
+        btn16.setText("jButton16");
+        jPanel1.add(btn16);
+
+        btn17.setBackground(new java.awt.Color(204, 204, 255));
+        btn17.setText("jButton17");
+        jPanel1.add(btn17);
+
+        btn18.setBackground(new java.awt.Color(204, 204, 255));
+        btn18.setText("jButton18");
+        jPanel1.add(btn18);
+
+        btn19.setBackground(new java.awt.Color(204, 204, 255));
+        btn19.setText("jButton19");
+        jPanel1.add(btn19);
+
+        btn20.setBackground(new java.awt.Color(204, 204, 255));
+        btn20.setText("jButton20");
+        jPanel1.add(btn20);
+
+        btn21.setBackground(new java.awt.Color(204, 204, 255));
+        btn21.setText("jButton21");
+        jPanel1.add(btn21);
+
+        btn22.setBackground(new java.awt.Color(204, 204, 255));
+        btn22.setText("jButton22");
+        jPanel1.add(btn22);
+
+        btn23.setBackground(new java.awt.Color(204, 204, 255));
+        btn23.setText("jButton23");
+        jPanel1.add(btn23);
+
+        btn24.setBackground(new java.awt.Color(204, 204, 255));
+        btn24.setText("jButton24");
+        jPanel1.add(btn24);
+
+        btn25.setBackground(new java.awt.Color(204, 204, 255));
+        btn25.setText("jButton25");
+        jPanel1.add(btn25);
+
+        btn26.setBackground(new java.awt.Color(204, 204, 255));
+        btn26.setText("jButton26");
+        jPanel1.add(btn26);
+
+        btn27.setBackground(new java.awt.Color(204, 204, 255));
+        btn27.setText("jButton27");
+        jPanel1.add(btn27);
+
+        btn28.setBackground(new java.awt.Color(204, 204, 255));
+        btn28.setText("jButton28");
+        jPanel1.add(btn28);
+
+        btn29.setBackground(new java.awt.Color(204, 204, 255));
+        btn29.setText("jButton29");
+        jPanel1.add(btn29);
+
+        btn30.setBackground(new java.awt.Color(204, 204, 255));
+        btn30.setText("jButton30");
+        jPanel1.add(btn30);
+
+        btn31.setBackground(new java.awt.Color(204, 204, 255));
+        btn31.setText("jButton31");
+        jPanel1.add(btn31);
+
+        btn32.setBackground(new java.awt.Color(204, 204, 255));
+        btn32.setText("jButton32");
+        jPanel1.add(btn32);
+
+        btn33.setBackground(new java.awt.Color(204, 204, 255));
+        btn33.setText("jButton33");
+        jPanel1.add(btn33);
+
+        btn34.setBackground(new java.awt.Color(204, 204, 255));
+        btn34.setText("jButton34");
+        jPanel1.add(btn34);
+
+        btn35.setBackground(new java.awt.Color(204, 204, 255));
+        btn35.setText("jButton35");
+        jPanel1.add(btn35);
+
+        btn36.setBackground(new java.awt.Color(204, 204, 255));
+        btn36.setText("jButton36");
+        jPanel1.add(btn36);
+
+        btn37.setBackground(new java.awt.Color(204, 204, 255));
+        btn37.setText("jButton37");
+        jPanel1.add(btn37);
+
+        btn38.setBackground(new java.awt.Color(204, 204, 255));
+        btn38.setText("jButton38");
+        jPanel1.add(btn38);
+
+        btn39.setBackground(new java.awt.Color(204, 204, 255));
+        btn39.setText("jButton39");
+        jPanel1.add(btn39);
+
+        btn40.setBackground(new java.awt.Color(204, 204, 255));
+        btn40.setText("jButton40");
+        btn40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn40ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn40);
+
+        btn41.setBackground(new java.awt.Color(204, 204, 255));
+        btn41.setText("jButton41");
+        jPanel1.add(btn41);
+
+        btn42.setBackground(new java.awt.Color(204, 204, 255));
+        btn42.setText("jButton42");
+        jPanel1.add(btn42);
+
+        btn43.setBackground(new java.awt.Color(204, 204, 255));
+        btn43.setText("jButton43");
+        jPanel1.add(btn43);
+
+        btn44.setBackground(new java.awt.Color(204, 204, 255));
+        btn44.setText("jButton44");
+        jPanel1.add(btn44);
+
+        btn45.setBackground(new java.awt.Color(204, 204, 255));
+        btn45.setText("jButton45");
+        jPanel1.add(btn45);
+
+        btn46.setBackground(new java.awt.Color(204, 204, 255));
+        btn46.setText("jButton46");
+        jPanel1.add(btn46);
+
+        btn47.setBackground(new java.awt.Color(204, 204, 255));
+        btn47.setText("jButton47");
+        jPanel1.add(btn47);
+
+        btn48.setBackground(new java.awt.Color(204, 204, 255));
+        btn48.setText("jButton48");
+        jPanel1.add(btn48);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn40ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,9 +358,54 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Proposer;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn10;
+    private javax.swing.JButton btn11;
+    private javax.swing.JButton btn12;
+    private javax.swing.JButton btn13;
+    private javax.swing.JButton btn14;
+    private javax.swing.JButton btn15;
+    private javax.swing.JButton btn16;
+    private javax.swing.JButton btn17;
+    private javax.swing.JButton btn18;
+    private javax.swing.JButton btn19;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn20;
+    private javax.swing.JButton btn21;
+    private javax.swing.JButton btn22;
+    private javax.swing.JButton btn23;
+    private javax.swing.JButton btn24;
+    private javax.swing.JButton btn25;
+    private javax.swing.JButton btn26;
+    private javax.swing.JButton btn27;
+    private javax.swing.JButton btn28;
+    private javax.swing.JButton btn29;
+    private javax.swing.JButton btn3;
+    private javax.swing.JButton btn30;
+    private javax.swing.JButton btn31;
+    private javax.swing.JButton btn32;
+    private javax.swing.JButton btn33;
+    private javax.swing.JButton btn34;
+    private javax.swing.JButton btn35;
+    private javax.swing.JButton btn36;
+    private javax.swing.JButton btn37;
+    private javax.swing.JButton btn38;
+    private javax.swing.JButton btn39;
+    private javax.swing.JButton btn4;
+    private javax.swing.JButton btn40;
+    private javax.swing.JButton btn41;
+    private javax.swing.JButton btn42;
+    private javax.swing.JButton btn43;
+    private javax.swing.JButton btn44;
+    private javax.swing.JButton btn45;
+    private javax.swing.JButton btn46;
+    private javax.swing.JButton btn47;
+    private javax.swing.JButton btn48;
+    private javax.swing.JButton btn5;
+    private javax.swing.JButton btn6;
+    private javax.swing.JButton btn7;
+    private javax.swing.JButton btn8;
+    private javax.swing.JButton btn9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
