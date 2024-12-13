@@ -6,7 +6,6 @@ import javax.swing.JButton;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author cassandrasortais
@@ -15,18 +14,19 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
     // Création du tableau de boutons
     private JButton[] boutons = new JButton[48];
+    private int[] clicsBoutons = new int[48]; // Tableau pour suivre le nombre de clics par bouton
 
     /**
      * Creates new form FenetrePrincipal
      */
     public FenetrePrincipal() {
         initComponents(); // Initialise les composants créés par le GUI Builder
-        
+
         // Boucle pour récupérer chaque bouton depuis le GUI Builder (btn1, btn2, ..., btn48)
         for (int i = 0; i < 48; i++) {
             // Création du nom de chaque bouton
             String nomBouton = "btn" + (i + 1); // "btn1", "btn2", ..., "btn48"
-            
+
             try {
                 // Utilisation de la réflexion pour obtenir chaque bouton en fonction de son nom
                 boutons[i] = (JButton) this.getClass().getDeclaredField(nomBouton).get(this);
@@ -37,18 +37,29 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
         // Ajouter des actions aux boutons
         for (int i = 0; i < 48; i++) {
-            // On ajoute un ActionListener à chaque bouton
-            int index = i; // Variable pour capturer l'index de chaque bouton dans la boucle
+            int index = i; // Capturer l'index dans la boucle
             boutons[i].addActionListener(e -> {
-                // Ce code s'exécute quand un bouton est cliqué
-                JButton boutonClique = (JButton) e.getSource(); // Récupère le bouton cliqué
-                boutonClique.setBackground(Color.RED);          // Change la couleur du bouton en rouge
-                // Tu peux ajouter d'autres actions ici si nécessaire
+                // Incrémenter le compteur de clics pour le bouton
+                clicsBoutons[index]++;
+
+                // Modifier la couleur en fonction du nombre de clics
+                switch (clicsBoutons[index] % 4) {
+                    case 1: // Premier clic
+                        boutons[index].setBackground(Color.RED);
+                        break;
+                    case 2: // Deuxième clic
+                        boutons[index].setBackground(Color.GREEN);
+                        break;
+                    case 3: // Troisième clic
+                        boutons[index].setBackground(Color.YELLOW);
+                        break;
+                    case 0: // Quatrième clic
+                        boutons[index].setBackground(Color.BLUE);
+                        break;
+                }
             });
         }
     }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,165 +160,165 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
-        btn1.setBackground(new java.awt.Color(204, 204, 255));
+        btn1.setBackground(new java.awt.Color(153, 204, 255));
         btn1.setText("jButton1");
         btn1.setName("btn1"); // NOI18N
         jPanel1.add(btn1);
         btn1.getAccessibleContext().setAccessibleDescription("");
 
-        btn2.setBackground(new java.awt.Color(204, 204, 255));
+        btn2.setBackground(new java.awt.Color(153, 204, 255));
         btn2.setText("jButton2");
         jPanel1.add(btn2);
 
-        btn3.setBackground(new java.awt.Color(204, 204, 255));
+        btn3.setBackground(new java.awt.Color(153, 204, 255));
         btn3.setText("jButton3");
         jPanel1.add(btn3);
 
-        btn4.setBackground(new java.awt.Color(204, 204, 255));
+        btn4.setBackground(new java.awt.Color(153, 204, 255));
         btn4.setText("jButton4");
         jPanel1.add(btn4);
 
-        btn5.setBackground(new java.awt.Color(204, 204, 255));
+        btn5.setBackground(new java.awt.Color(153, 204, 255));
         btn5.setText("jButton5");
         jPanel1.add(btn5);
 
-        btn6.setBackground(new java.awt.Color(204, 204, 255));
+        btn6.setBackground(new java.awt.Color(153, 204, 255));
         btn6.setText("jButton6");
         jPanel1.add(btn6);
 
-        btn7.setBackground(new java.awt.Color(204, 204, 255));
+        btn7.setBackground(new java.awt.Color(153, 204, 255));
         btn7.setText("jButton7");
         jPanel1.add(btn7);
 
-        btn8.setBackground(new java.awt.Color(204, 204, 255));
+        btn8.setBackground(new java.awt.Color(153, 204, 255));
         btn8.setText("jButton8");
         jPanel1.add(btn8);
 
-        btn9.setBackground(new java.awt.Color(204, 204, 255));
+        btn9.setBackground(new java.awt.Color(153, 204, 255));
         btn9.setText("jButton9");
         jPanel1.add(btn9);
 
-        btn10.setBackground(new java.awt.Color(204, 204, 255));
+        btn10.setBackground(new java.awt.Color(153, 204, 255));
         btn10.setText("jButton10");
         jPanel1.add(btn10);
 
-        btn11.setBackground(new java.awt.Color(204, 204, 255));
+        btn11.setBackground(new java.awt.Color(153, 204, 255));
         btn11.setText("jButton11");
         jPanel1.add(btn11);
 
-        btn12.setBackground(new java.awt.Color(204, 204, 255));
+        btn12.setBackground(new java.awt.Color(153, 204, 255));
         btn12.setText("jButton12");
         jPanel1.add(btn12);
 
-        btn13.setBackground(new java.awt.Color(204, 204, 255));
+        btn13.setBackground(new java.awt.Color(153, 204, 255));
         btn13.setText("jButton13");
         jPanel1.add(btn13);
 
-        btn14.setBackground(new java.awt.Color(204, 204, 255));
+        btn14.setBackground(new java.awt.Color(153, 204, 255));
         btn14.setText("jButton14");
         jPanel1.add(btn14);
 
-        btn15.setBackground(new java.awt.Color(204, 204, 255));
+        btn15.setBackground(new java.awt.Color(153, 204, 255));
         btn15.setText("jButton15");
         jPanel1.add(btn15);
 
-        btn16.setBackground(new java.awt.Color(204, 204, 255));
+        btn16.setBackground(new java.awt.Color(153, 204, 255));
         btn16.setText("jButton16");
         jPanel1.add(btn16);
 
-        btn17.setBackground(new java.awt.Color(204, 204, 255));
+        btn17.setBackground(new java.awt.Color(153, 204, 255));
         btn17.setText("jButton17");
         jPanel1.add(btn17);
 
-        btn18.setBackground(new java.awt.Color(204, 204, 255));
+        btn18.setBackground(new java.awt.Color(153, 204, 255));
         btn18.setText("jButton18");
         jPanel1.add(btn18);
 
-        btn19.setBackground(new java.awt.Color(204, 204, 255));
+        btn19.setBackground(new java.awt.Color(153, 204, 255));
         btn19.setText("jButton19");
         jPanel1.add(btn19);
 
-        btn20.setBackground(new java.awt.Color(204, 204, 255));
+        btn20.setBackground(new java.awt.Color(153, 204, 255));
         btn20.setText("jButton20");
         jPanel1.add(btn20);
 
-        btn21.setBackground(new java.awt.Color(204, 204, 255));
+        btn21.setBackground(new java.awt.Color(153, 204, 255));
         btn21.setText("jButton21");
         jPanel1.add(btn21);
 
-        btn22.setBackground(new java.awt.Color(204, 204, 255));
+        btn22.setBackground(new java.awt.Color(153, 204, 255));
         btn22.setText("jButton22");
         jPanel1.add(btn22);
 
-        btn23.setBackground(new java.awt.Color(204, 204, 255));
+        btn23.setBackground(new java.awt.Color(153, 204, 255));
         btn23.setText("jButton23");
         jPanel1.add(btn23);
 
-        btn24.setBackground(new java.awt.Color(204, 204, 255));
+        btn24.setBackground(new java.awt.Color(153, 204, 255));
         btn24.setText("jButton24");
         jPanel1.add(btn24);
 
-        btn25.setBackground(new java.awt.Color(204, 204, 255));
+        btn25.setBackground(new java.awt.Color(153, 204, 255));
         btn25.setText("jButton25");
         jPanel1.add(btn25);
 
-        btn26.setBackground(new java.awt.Color(204, 204, 255));
+        btn26.setBackground(new java.awt.Color(153, 204, 255));
         btn26.setText("jButton26");
         jPanel1.add(btn26);
 
-        btn27.setBackground(new java.awt.Color(204, 204, 255));
+        btn27.setBackground(new java.awt.Color(153, 204, 255));
         btn27.setText("jButton27");
         jPanel1.add(btn27);
 
-        btn28.setBackground(new java.awt.Color(204, 204, 255));
+        btn28.setBackground(new java.awt.Color(153, 204, 255));
         btn28.setText("jButton28");
         jPanel1.add(btn28);
 
-        btn29.setBackground(new java.awt.Color(204, 204, 255));
+        btn29.setBackground(new java.awt.Color(153, 204, 255));
         btn29.setText("jButton29");
         jPanel1.add(btn29);
 
-        btn30.setBackground(new java.awt.Color(204, 204, 255));
+        btn30.setBackground(new java.awt.Color(153, 204, 255));
         btn30.setText("jButton30");
         jPanel1.add(btn30);
 
-        btn31.setBackground(new java.awt.Color(204, 204, 255));
+        btn31.setBackground(new java.awt.Color(153, 204, 255));
         btn31.setText("jButton31");
         jPanel1.add(btn31);
 
-        btn32.setBackground(new java.awt.Color(204, 204, 255));
+        btn32.setBackground(new java.awt.Color(153, 204, 255));
         btn32.setText("jButton32");
         jPanel1.add(btn32);
 
-        btn33.setBackground(new java.awt.Color(204, 204, 255));
+        btn33.setBackground(new java.awt.Color(153, 204, 255));
         btn33.setText("jButton33");
         jPanel1.add(btn33);
 
-        btn34.setBackground(new java.awt.Color(204, 204, 255));
+        btn34.setBackground(new java.awt.Color(153, 204, 255));
         btn34.setText("jButton34");
         jPanel1.add(btn34);
 
-        btn35.setBackground(new java.awt.Color(204, 204, 255));
+        btn35.setBackground(new java.awt.Color(153, 204, 255));
         btn35.setText("jButton35");
         jPanel1.add(btn35);
 
-        btn36.setBackground(new java.awt.Color(204, 204, 255));
+        btn36.setBackground(new java.awt.Color(153, 204, 255));
         btn36.setText("jButton36");
         jPanel1.add(btn36);
 
-        btn37.setBackground(new java.awt.Color(204, 204, 255));
+        btn37.setBackground(new java.awt.Color(153, 204, 255));
         btn37.setText("jButton37");
         jPanel1.add(btn37);
 
-        btn38.setBackground(new java.awt.Color(204, 204, 255));
+        btn38.setBackground(new java.awt.Color(153, 204, 255));
         btn38.setText("jButton38");
         jPanel1.add(btn38);
 
-        btn39.setBackground(new java.awt.Color(204, 204, 255));
+        btn39.setBackground(new java.awt.Color(153, 204, 255));
         btn39.setText("jButton39");
         jPanel1.add(btn39);
 
-        btn40.setBackground(new java.awt.Color(204, 204, 255));
+        btn40.setBackground(new java.awt.Color(153, 204, 255));
         btn40.setText("jButton40");
         btn40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,35 +327,35 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btn40);
 
-        btn41.setBackground(new java.awt.Color(204, 204, 255));
+        btn41.setBackground(new java.awt.Color(153, 204, 255));
         btn41.setText("jButton41");
         jPanel1.add(btn41);
 
-        btn42.setBackground(new java.awt.Color(204, 204, 255));
+        btn42.setBackground(new java.awt.Color(153, 204, 255));
         btn42.setText("jButton42");
         jPanel1.add(btn42);
 
-        btn43.setBackground(new java.awt.Color(204, 204, 255));
+        btn43.setBackground(new java.awt.Color(153, 204, 255));
         btn43.setText("jButton43");
         jPanel1.add(btn43);
 
-        btn44.setBackground(new java.awt.Color(204, 204, 255));
+        btn44.setBackground(new java.awt.Color(153, 204, 255));
         btn44.setText("jButton44");
         jPanel1.add(btn44);
 
-        btn45.setBackground(new java.awt.Color(204, 204, 255));
+        btn45.setBackground(new java.awt.Color(153, 204, 255));
         btn45.setText("jButton45");
         jPanel1.add(btn45);
 
-        btn46.setBackground(new java.awt.Color(204, 204, 255));
+        btn46.setBackground(new java.awt.Color(153, 204, 255));
         btn46.setText("jButton46");
         jPanel1.add(btn46);
 
-        btn47.setBackground(new java.awt.Color(204, 204, 255));
+        btn47.setBackground(new java.awt.Color(153, 204, 255));
         btn47.setText("jButton47");
         jPanel1.add(btn47);
 
-        btn48.setBackground(new java.awt.Color(204, 204, 255));
+        btn48.setBackground(new java.awt.Color(153, 204, 255));
         btn48.setText("jButton48");
         jPanel1.add(btn48);
 

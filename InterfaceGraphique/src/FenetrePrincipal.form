@@ -18,7 +18,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,85,0,0,1,-5"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-44,0,0,1,-5"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
@@ -86,7 +86,7 @@
         <Component class="javax.swing.JButton" name="btn1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
             <Property name="name" type="java.lang.String" value="btn1" noResource="true"/>
@@ -98,7 +98,7 @@
         <Component class="javax.swing.JButton" name="btn2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton2"/>
           </Properties>
@@ -106,7 +106,7 @@
         <Component class="javax.swing.JButton" name="btn3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton3"/>
           </Properties>
@@ -114,7 +114,7 @@
         <Component class="javax.swing.JButton" name="btn4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton4"/>
           </Properties>
@@ -122,7 +122,7 @@
         <Component class="javax.swing.JButton" name="btn5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton5"/>
           </Properties>
@@ -130,7 +130,7 @@
         <Component class="javax.swing.JButton" name="btn6">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton6"/>
           </Properties>
@@ -138,7 +138,7 @@
         <Component class="javax.swing.JButton" name="btn7">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton7"/>
           </Properties>
@@ -146,7 +146,7 @@
         <Component class="javax.swing.JButton" name="btn8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton8"/>
           </Properties>
@@ -154,7 +154,7 @@
         <Component class="javax.swing.JButton" name="btn9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton9"/>
           </Properties>
@@ -162,7 +162,7 @@
         <Component class="javax.swing.JButton" name="btn10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton10"/>
           </Properties>
@@ -170,7 +170,7 @@
         <Component class="javax.swing.JButton" name="btn11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton11"/>
           </Properties>
@@ -178,7 +178,7 @@
         <Component class="javax.swing.JButton" name="btn12">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton12"/>
           </Properties>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JButton" name="btn13">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton13"/>
           </Properties>
@@ -194,7 +194,7 @@
         <Component class="javax.swing.JButton" name="btn14">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton14"/>
           </Properties>
@@ -202,7 +202,7 @@
         <Component class="javax.swing.JButton" name="btn15">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton15"/>
           </Properties>
@@ -210,7 +210,7 @@
         <Component class="javax.swing.JButton" name="btn16">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton16"/>
           </Properties>
@@ -218,7 +218,7 @@
         <Component class="javax.swing.JButton" name="btn17">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton17"/>
           </Properties>
@@ -226,7 +226,7 @@
         <Component class="javax.swing.JButton" name="btn18">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton18"/>
           </Properties>
@@ -234,7 +234,7 @@
         <Component class="javax.swing.JButton" name="btn19">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton19"/>
           </Properties>
@@ -242,7 +242,7 @@
         <Component class="javax.swing.JButton" name="btn20">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton20"/>
           </Properties>
@@ -250,7 +250,7 @@
         <Component class="javax.swing.JButton" name="btn21">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton21"/>
           </Properties>
@@ -258,7 +258,7 @@
         <Component class="javax.swing.JButton" name="btn22">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton22"/>
           </Properties>
@@ -266,7 +266,7 @@
         <Component class="javax.swing.JButton" name="btn23">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton23"/>
           </Properties>
@@ -274,7 +274,7 @@
         <Component class="javax.swing.JButton" name="btn24">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton24"/>
           </Properties>
@@ -282,7 +282,7 @@
         <Component class="javax.swing.JButton" name="btn25">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton25"/>
           </Properties>
@@ -290,7 +290,7 @@
         <Component class="javax.swing.JButton" name="btn26">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton26"/>
           </Properties>
@@ -298,7 +298,7 @@
         <Component class="javax.swing.JButton" name="btn27">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton27"/>
           </Properties>
@@ -306,7 +306,7 @@
         <Component class="javax.swing.JButton" name="btn28">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton28"/>
           </Properties>
@@ -314,7 +314,7 @@
         <Component class="javax.swing.JButton" name="btn29">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton29"/>
           </Properties>
@@ -322,7 +322,7 @@
         <Component class="javax.swing.JButton" name="btn30">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton30"/>
           </Properties>
@@ -330,7 +330,7 @@
         <Component class="javax.swing.JButton" name="btn31">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton31"/>
           </Properties>
@@ -338,7 +338,7 @@
         <Component class="javax.swing.JButton" name="btn32">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton32"/>
           </Properties>
@@ -346,7 +346,7 @@
         <Component class="javax.swing.JButton" name="btn33">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton33"/>
           </Properties>
@@ -354,7 +354,7 @@
         <Component class="javax.swing.JButton" name="btn34">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton34"/>
           </Properties>
@@ -362,7 +362,7 @@
         <Component class="javax.swing.JButton" name="btn35">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton35"/>
           </Properties>
@@ -370,7 +370,7 @@
         <Component class="javax.swing.JButton" name="btn36">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton36"/>
           </Properties>
@@ -378,7 +378,7 @@
         <Component class="javax.swing.JButton" name="btn37">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton37"/>
           </Properties>
@@ -386,7 +386,7 @@
         <Component class="javax.swing.JButton" name="btn38">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton38"/>
           </Properties>
@@ -394,7 +394,7 @@
         <Component class="javax.swing.JButton" name="btn39">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton39"/>
           </Properties>
@@ -402,7 +402,7 @@
         <Component class="javax.swing.JButton" name="btn40">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton40"/>
           </Properties>
@@ -413,7 +413,7 @@
         <Component class="javax.swing.JButton" name="btn41">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton41"/>
           </Properties>
@@ -421,7 +421,7 @@
         <Component class="javax.swing.JButton" name="btn42">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton42"/>
           </Properties>
@@ -429,7 +429,7 @@
         <Component class="javax.swing.JButton" name="btn43">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton43"/>
           </Properties>
@@ -437,7 +437,7 @@
         <Component class="javax.swing.JButton" name="btn44">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton44"/>
           </Properties>
@@ -445,7 +445,7 @@
         <Component class="javax.swing.JButton" name="btn45">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton45"/>
           </Properties>
@@ -453,7 +453,7 @@
         <Component class="javax.swing.JButton" name="btn46">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton46"/>
           </Properties>
@@ -461,7 +461,7 @@
         <Component class="javax.swing.JButton" name="btn47">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton47"/>
           </Properties>
@@ -469,7 +469,7 @@
         <Component class="javax.swing.JButton" name="btn48">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton48"/>
           </Properties>
