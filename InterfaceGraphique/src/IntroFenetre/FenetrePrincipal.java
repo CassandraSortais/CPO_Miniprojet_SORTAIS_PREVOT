@@ -1,4 +1,4 @@
-package IntroFenetre;
+
 
 
 import java.awt.Color;
