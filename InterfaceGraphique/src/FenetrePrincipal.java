@@ -365,7 +365,10 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40ActionPerformed
-        // TODO add your handling code here:
+        FenetrePrincipal.super.dispose();
+        Menu men3 = new Menu ();
+        men3.setVisible(true);
+       
     }//GEN-LAST:event_btn40ActionPerformed
 
     /**
@@ -398,7 +401,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetrePrincipal().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
