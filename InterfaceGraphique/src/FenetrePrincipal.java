@@ -131,7 +131,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setText("Code à deviner");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("cc");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
