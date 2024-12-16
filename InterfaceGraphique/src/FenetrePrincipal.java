@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,7 +15,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
     // Création du tableau de boutons
     private JButton[] boutons = new JButton[48];
-    private int[] clicsBoutons = new int[48]; // Tableau pour suivre le nombre de clics par bouton
+    private int[] clicsBoutons = new int[48];
 
     /**
      * Creates new form FenetrePrincipal
@@ -59,8 +60,43 @@ public class FenetrePrincipal extends javax.swing.JFrame {
                 }
             });
         }
+
+        // Initialiser et configurer le bouton "Valider"
+        btnValider = new JButton("Valider");
+        btnValider.setBounds(10, 10, 100, 30); // Positionner le bouton (à ajuster selon votre interface)
+        this.add(btnValider); // Ajouter le bouton à la fenêtre principale
+
+        // Ajouter un ActionListener au bouton "Valider"
+        btnValider.addActionListener(e -> validerCombinaison());
     }
 
+    // Méthode pour valider la combinaison sur la première ligne
+    private void validerCombinaison() {
+        // Récupérer les couleurs des 4 premiers boutons (ligne 1)
+        String[] combinaison = new String[4];
+        for (int i = 0; i < 4; i++) {
+            Color couleur = boutons[i].getBackground();
+            if (couleur.equals(Color.RED)) {
+                combinaison[i] = "Rouge";
+            } else if (couleur.equals(Color.GREEN)) {
+                combinaison[i] = "Vert";
+            } else if (couleur.equals(Color.YELLOW)) {
+                combinaison[i] = "Jaune";
+            } else if (couleur.equals(Color.BLUE)) {
+                combinaison[i] = "Bleu";
+            } else {
+                combinaison[i] = "Aucune";
+            }
+        }
+
+        // Afficher la combinaison pour vérification (ou traiter selon votre logique)
+        JOptionPane.showMessageDialog(this,
+                "Combinaison validée : " + String.join(", ", combinaison),
+                "Validation",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,7 +108,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnValider = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
@@ -131,7 +167,12 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setText("Code à deviner");
 
-        jButton1.setText("cc");
+        btnValider.setText("Valider");
+        btnValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnValiderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -142,7 +183,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(btnValider)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -151,7 +192,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnValider)
                 .addContainerGap())
         );
 
@@ -374,10 +415,16 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
     private void btn40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40ActionPerformed
         FenetrePrincipal.super.dispose();
-        Menu men3 = new Menu ();
+        Menu men3 = new Menu();
         men3.setVisible(true);
-       
+
     }//GEN-LAST:event_btn40ActionPerformed
+
+    private void btnValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValiderActionPerformed
+
+// TODO add your handling code here:
+        validerCombinaison();
+    }//GEN-LAST:event_btnValiderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -463,7 +510,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn7;
     private javax.swing.JButton btn8;
     private javax.swing.JButton btn9;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnValider;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
