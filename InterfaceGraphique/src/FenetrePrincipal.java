@@ -166,10 +166,10 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         btnValider = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
@@ -226,16 +226,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Bienvenue dans MasterMind !\nChoisis 4 couleurs, clique sur Valider.\nRéessaie avec les indices jusqu'à \ntrouver la combinaison secrète \nBonne chance !");
-        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 102, 102));
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1);
-
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
 
@@ -252,33 +242,42 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(17, 17, 17)
                 .addComponent(btnValider)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(37, 37, 37)
                 .addComponent(btnValider)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Bienvenue dans MasterMind !\nChoisis 4 couleurs, clique sur Valider.\nRéessaie avec les indices jusqu'à \ntrouver la combinaison secrète \nBonne chance !");
+        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 102, 102));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1);
         getContentPane().add(jLabel1);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
-        btn1.setBackground(new java.awt.Color(153, 204, 255));
         btn1.setName("btn1"); // NOI18N
         jPanel1.add(btn1);
         btn1.getAccessibleContext().setAccessibleDescription("");
 
-        btn2.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.add(btn2);
 
-        btn3.setBackground(new java.awt.Color(153, 204, 255));
+        btn3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(btn3);
 
         btn4.setBackground(new java.awt.Color(153, 204, 255));
