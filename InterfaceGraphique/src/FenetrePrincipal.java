@@ -24,13 +24,15 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
 
 
-
     /**
      * Creates new form FenetrePrincipal
      */
     public FenetrePrincipal() {
         initComponents(); // Initialise les composants créés par le GUI Builder
 
+        getContentPane().setBackground(new java.awt.Color(204, 204, 255));
+
+        
         // Boucle pour récupérer chaque bouton depuis le GUI Builder (btn1, btn2, ..., btn48)
         for (int i = 0; i < 48; i++) {
             // Création du nom de chaque bouton
@@ -176,8 +178,8 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btn4 = new javax.swing.JButton();
         btn5 = new javax.swing.JButton();
         btn6 = new javax.swing.JButton();
-        btn7 = new javax.swing.JButton();
         btn8 = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
         btn9 = new javax.swing.JButton();
         btn10 = new javax.swing.JButton();
         btn11 = new javax.swing.JButton();
@@ -220,11 +222,12 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btn48 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 0, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Bienvenue dans MasterMind !\nChoisis 4 couleurs, clique sur Valider.\nRéessaie avec les indices jusqu'à \ntrouver la combinaison secrète \nBonne chance !");
@@ -232,6 +235,9 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 153, 153));
 
         btnValider.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnValider.setText("Valider");
@@ -261,6 +267,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         getContentPane().add(jLabel1);
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
         btn1.setBackground(new java.awt.Color(153, 204, 255));
@@ -284,11 +291,11 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btn6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.add(btn6);
 
-        btn7.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel1.add(btn7);
-
         btn8.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.add(btn8);
+
+        btn7.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.add(btn7);
 
         btn9.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.add(btn9);
