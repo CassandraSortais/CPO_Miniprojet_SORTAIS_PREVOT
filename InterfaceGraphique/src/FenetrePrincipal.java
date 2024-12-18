@@ -164,10 +164,10 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        btnValider = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        btnValider = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
@@ -224,6 +224,15 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Bienvenue dans MasterMind !\nChoisis 4 couleurs, clique sur Valider.\nRéessaie avec les indices jusqu'à \ntrouver la combinaison secrète \nBonne chance !");
+        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 102, 102));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1);
+
         btnValider.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnValider.setText("Valider");
         btnValider.addActionListener(new java.awt.event.ActionListener() {
@@ -250,15 +259,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2);
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Bienvenue dans MasterMind !");
-        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 102, 102));
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1);
         getContentPane().add(jLabel1);
 
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
