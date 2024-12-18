@@ -3,6 +3,9 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,6 +19,11 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     // Création du tableau de boutons
     private JButton[] boutons = new JButton[48];
     private int[] clicsBoutons = new int[48];
+    private char[] combinaisonSecrete = {'R', 'V', 'J', 'B'}; // Exemple de combinaison secrète
+    private int ligneActuelle = 0; // Suivi de la ligne actuelle (0 à 11)
+
+
+
 
     /**
      * Creates new form FenetrePrincipal
@@ -70,31 +78,58 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btnValider.addActionListener(e -> validerCombinaison());
     }
 
-    // Méthode pour valider la combinaison sur la première ligne
+  
     private void validerCombinaison() {
-        // Récupérer les couleurs des 4 premiers boutons (ligne 1)
-        String[] combinaison = new String[4];
-        for (int i = 0; i < 4; i++) {
-            Color couleur = boutons[i].getBackground();
-            if (couleur.equals(Color.RED)) {
-                combinaison[i] = "Rouge";
-            } else if (couleur.equals(Color.GREEN)) {
-                combinaison[i] = "Vert";
-            } else if (couleur.equals(Color.YELLOW)) {
-                combinaison[i] = "Jaune";
-            } else if (couleur.equals(Color.BLUE)) {
-                combinaison[i] = "Bleu";
-            } else {
-                combinaison[i] = "Aucune";
+    int noirs = 0; // Compteur des bien placés
+    int blancs = 0; // Compteur des mal placés
+    boolean[] verifieSecrete = new boolean[4]; // Pour éviter de compter 2 fois
+    boolean[] verifieTentative = new boolean[4];
+
+    // Récupérer la combinaison du joueur (ligne actuelle)
+    char[] tentative = new char[4];
+    for (int i = 0; i < 4; i++) {
+        Color couleur = boutons[ligneActuelle * 4 + i].getBackground();
+        if (couleur.equals(Color.RED)) {
+            tentative[i] = 'R';
+        } else if (couleur.equals(Color.GREEN)) {
+            tentative[i] = 'V';
+        } else if (couleur.equals(Color.YELLOW)) {
+            tentative[i] = 'J';
+        } else if (couleur.equals(Color.BLUE)) {
+            tentative[i] = 'B';
+        }
+    }
+
+    // Étape 1 : Compter les noirs (bien placés)
+    for (int i = 0; i < 4; i++) {
+        if (tentative[i] == combinaisonSecrete[i]) {
+            noirs++;
+            verifieSecrete[i] = true;
+            verifieTentative[i] = true;
+        }
+    }
+
+    // Étape 2 : Compter les blancs (mal placés)
+    for (int i = 0; i < 4; i++) {
+        if (!verifieTentative[i]) { // Si ce pion n'est pas déjà bien placé
+            for (int j = 0; j < 4; j++) {
+                if (!verifieSecrete[j] && tentative[i] == combinaisonSecrete[j]) {
+                    blancs++;
+                    verifieSecrete[j] = true;
+                    break;
+                }
             }
         }
-
-        // Afficher la combinaison pour vérification (ou traiter selon votre logique)
-        JOptionPane.showMessageDialog(this,
-                "Combinaison validée : " + String.join(", ", combinaison),
-                "Validation",
-                JOptionPane.INFORMATION_MESSAGE);
     }
+
+    // Afficher le résultat pour cette ligne
+    JOptionPane.showMessageDialog(this, 
+        "Résultat : " + noirs + " noir(s) et " + blancs + " blanc(s)", 
+        "Validation", JOptionPane.INFORMATION_MESSAGE);
+
+    // Passer à la ligne suivante
+    ligneActuelle++;
+}
 
  
     /**
@@ -111,6 +146,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btnValider = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
@@ -206,6 +242,9 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
+
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
 
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
@@ -511,6 +550,7 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn8;
     private javax.swing.JButton btn9;
     private javax.swing.JButton btnValider;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
