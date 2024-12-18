@@ -165,7 +165,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         btnValider = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -221,11 +220,11 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         btn48 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
-        jTextField1.setEditable(false);
-        jTextField1.setText("Code à deviner");
-
+        btnValider.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnValider.setText("Valider");
         btnValider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,21 +237,16 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(btnValider)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
                 .addComponent(btnValider)
-                .addContainerGap())
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -265,209 +259,166 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-
-        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
 
         jPanel1.setLayout(new java.awt.GridLayout(12, 4, 5, 5));
 
         btn1.setBackground(new java.awt.Color(153, 204, 255));
-        btn1.setText("jButton1");
         btn1.setName("btn1"); // NOI18N
         jPanel1.add(btn1);
         btn1.getAccessibleContext().setAccessibleDescription("");
 
         btn2.setBackground(new java.awt.Color(153, 204, 255));
-        btn2.setText("jButton2");
         jPanel1.add(btn2);
 
         btn3.setBackground(new java.awt.Color(153, 204, 255));
-        btn3.setText("jButton3");
         jPanel1.add(btn3);
 
         btn4.setBackground(new java.awt.Color(153, 204, 255));
-        btn4.setText("jButton4");
+        btn4.setText(" ");
         jPanel1.add(btn4);
 
         btn5.setBackground(new java.awt.Color(153, 204, 255));
-        btn5.setText("jButton5");
         jPanel1.add(btn5);
 
         btn6.setBackground(new java.awt.Color(153, 204, 255));
-        btn6.setText("jButton6");
         jPanel1.add(btn6);
 
         btn7.setBackground(new java.awt.Color(153, 204, 255));
-        btn7.setText("jButton7");
         jPanel1.add(btn7);
 
         btn8.setBackground(new java.awt.Color(153, 204, 255));
-        btn8.setText("jButton8");
         jPanel1.add(btn8);
 
         btn9.setBackground(new java.awt.Color(153, 204, 255));
-        btn9.setText("jButton9");
         jPanel1.add(btn9);
 
         btn10.setBackground(new java.awt.Color(153, 204, 255));
-        btn10.setText("jButton10");
         jPanel1.add(btn10);
 
         btn11.setBackground(new java.awt.Color(153, 204, 255));
-        btn11.setText("jButton11");
         jPanel1.add(btn11);
 
         btn12.setBackground(new java.awt.Color(153, 204, 255));
-        btn12.setText("jButton12");
         jPanel1.add(btn12);
 
         btn13.setBackground(new java.awt.Color(153, 204, 255));
-        btn13.setText("jButton13");
         jPanel1.add(btn13);
 
         btn14.setBackground(new java.awt.Color(153, 204, 255));
-        btn14.setText("jButton14");
         jPanel1.add(btn14);
 
         btn15.setBackground(new java.awt.Color(153, 204, 255));
-        btn15.setText("jButton15");
         jPanel1.add(btn15);
 
         btn16.setBackground(new java.awt.Color(153, 204, 255));
-        btn16.setText("jButton16");
         jPanel1.add(btn16);
 
         btn17.setBackground(new java.awt.Color(153, 204, 255));
-        btn17.setText("jButton17");
         jPanel1.add(btn17);
 
         btn18.setBackground(new java.awt.Color(153, 204, 255));
-        btn18.setText("jButton18");
         jPanel1.add(btn18);
 
         btn19.setBackground(new java.awt.Color(153, 204, 255));
-        btn19.setText("jButton19");
         jPanel1.add(btn19);
 
         btn20.setBackground(new java.awt.Color(153, 204, 255));
-        btn20.setText("jButton20");
         jPanel1.add(btn20);
 
         btn21.setBackground(new java.awt.Color(153, 204, 255));
-        btn21.setText("jButton21");
         jPanel1.add(btn21);
 
         btn22.setBackground(new java.awt.Color(153, 204, 255));
-        btn22.setText("jButton22");
         jPanel1.add(btn22);
 
         btn23.setBackground(new java.awt.Color(153, 204, 255));
-        btn23.setText("jButton23");
         jPanel1.add(btn23);
 
         btn24.setBackground(new java.awt.Color(153, 204, 255));
-        btn24.setText("jButton24");
         jPanel1.add(btn24);
 
         btn25.setBackground(new java.awt.Color(153, 204, 255));
-        btn25.setText("jButton25");
         jPanel1.add(btn25);
 
         btn26.setBackground(new java.awt.Color(153, 204, 255));
-        btn26.setText("jButton26");
         jPanel1.add(btn26);
 
         btn27.setBackground(new java.awt.Color(153, 204, 255));
-        btn27.setText("jButton27");
         jPanel1.add(btn27);
 
         btn28.setBackground(new java.awt.Color(153, 204, 255));
-        btn28.setText("jButton28");
         jPanel1.add(btn28);
 
         btn29.setBackground(new java.awt.Color(153, 204, 255));
-        btn29.setText("jButton29");
         jPanel1.add(btn29);
 
         btn30.setBackground(new java.awt.Color(153, 204, 255));
-        btn30.setText("jButton30");
         jPanel1.add(btn30);
 
         btn31.setBackground(new java.awt.Color(153, 204, 255));
-        btn31.setText("jButton31");
         jPanel1.add(btn31);
 
         btn32.setBackground(new java.awt.Color(153, 204, 255));
-        btn32.setText("jButton32");
         jPanel1.add(btn32);
 
         btn33.setBackground(new java.awt.Color(153, 204, 255));
-        btn33.setText("jButton33");
         jPanel1.add(btn33);
 
         btn34.setBackground(new java.awt.Color(153, 204, 255));
-        btn34.setText("jButton34");
         jPanel1.add(btn34);
 
         btn35.setBackground(new java.awt.Color(153, 204, 255));
-        btn35.setText("jButton35");
         jPanel1.add(btn35);
 
         btn36.setBackground(new java.awt.Color(153, 204, 255));
-        btn36.setText("jButton36");
         jPanel1.add(btn36);
 
         btn37.setBackground(new java.awt.Color(153, 204, 255));
-        btn37.setText("jButton37");
         jPanel1.add(btn37);
 
         btn38.setBackground(new java.awt.Color(153, 204, 255));
-        btn38.setText("jButton38");
         jPanel1.add(btn38);
 
         btn39.setBackground(new java.awt.Color(153, 204, 255));
-        btn39.setText("jButton39");
         jPanel1.add(btn39);
 
         btn40.setBackground(new java.awt.Color(153, 204, 255));
-        btn40.setText("jButton40");
         jPanel1.add(btn40);
 
         btn41.setBackground(new java.awt.Color(153, 204, 255));
-        btn41.setText("jButton41");
+        btn41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn41ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn41);
 
         btn42.setBackground(new java.awt.Color(153, 204, 255));
-        btn42.setText("jButton42");
         jPanel1.add(btn42);
 
         btn43.setBackground(new java.awt.Color(153, 204, 255));
-        btn43.setText("jButton43");
         jPanel1.add(btn43);
 
         btn44.setBackground(new java.awt.Color(153, 204, 255));
-        btn44.setText("jButton44");
         jPanel1.add(btn44);
 
         btn45.setBackground(new java.awt.Color(153, 204, 255));
-        btn45.setText("jButton45");
         jPanel1.add(btn45);
 
         btn46.setBackground(new java.awt.Color(153, 204, 255));
-        btn46.setText("jButton46");
         jPanel1.add(btn46);
 
         btn47.setBackground(new java.awt.Color(153, 204, 255));
-        btn47.setText("jButton47");
         jPanel1.add(btn47);
 
         btn48.setBackground(new java.awt.Color(153, 204, 255));
-        btn48.setText("jButton48");
         jPanel1.add(btn48);
 
         getContentPane().add(jPanel1);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValiderActionPerformed
@@ -475,6 +426,10 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 // TODO add your handling code here:
         validerCombinaison();
     }//GEN-LAST:event_btnValiderActionPerformed
+
+    private void btn41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn41ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -566,6 +521,5 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
