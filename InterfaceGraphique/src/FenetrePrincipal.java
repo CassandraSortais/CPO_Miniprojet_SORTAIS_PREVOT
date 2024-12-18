@@ -80,6 +80,13 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
   
     private void validerCombinaison() {
+   
+    // Vérifier que le nombre d'essais est inférieur à 12 avant de valider
+    if (ligneActuelle >= 12) {
+        JOptionPane.showMessageDialog(this, "Toutes les tentatives ont été utilisées.", "Fin de la partie", JOptionPane.INFORMATION_MESSAGE);
+        return; // Sortir sans faire d'autres actions si on a dépassé les 12 essais
+    }
+
     int noirs = 0; // Compteur des bien placés
     int blancs = 0; // Compteur des mal placés
     boolean[] verifieSecrete = new boolean[4]; // Pour éviter de compter 2 fois
@@ -88,15 +95,19 @@ public class FenetrePrincipal extends javax.swing.JFrame {
     // Récupérer la combinaison du joueur (ligne actuelle)
     char[] tentative = new char[4];
     for (int i = 0; i < 4; i++) {
-        Color couleur = boutons[ligneActuelle * 4 + i].getBackground();
-        if (couleur.equals(Color.RED)) {
-            tentative[i] = 'R';
-        } else if (couleur.equals(Color.GREEN)) {
-            tentative[i] = 'V';
-        } else if (couleur.equals(Color.YELLOW)) {
-            tentative[i] = 'J';
-        } else if (couleur.equals(Color.BLUE)) {
-            tentative[i] = 'B';
+        // Calculer l'indice pour le bouton en fonction de la ligne actuelle (12 lignes, 4 colonnes)
+        int index = ligneActuelle * 4 + i;
+        if (index < boutons.length) {
+            Color couleur = boutons[index].getBackground();
+            if (couleur.equals(Color.RED)) {
+                tentative[i] = 'R';
+            } else if (couleur.equals(Color.GREEN)) {
+                tentative[i] = 'V';
+            } else if (couleur.equals(Color.YELLOW)) {
+                tentative[i] = 'J';
+            } else if (couleur.equals(Color.BLUE)) {
+                tentative[i] = 'B';
+            }
         }
     }
 
@@ -127,9 +138,21 @@ public class FenetrePrincipal extends javax.swing.JFrame {
         "Résultat : " + noirs + " noir(s) et " + blancs + " blanc(s)", 
         "Validation", JOptionPane.INFORMATION_MESSAGE);
 
-    // Passer à la ligne suivante
-    ligneActuelle++;
+    // Vérifier si la combinaison est correcte
+    if (noirs == 4) {
+        JOptionPane.showMessageDialog(this, "Vous avez gagné !", "Félicitations", JOptionPane.INFORMATION_MESSAGE);
+        btnValider.setEnabled(false); // Désactiver le bouton Valider
+    } else if (ligneActuelle == 11) {
+        // Vérifier si on a atteint la dernière ligne
+        JOptionPane.showMessageDialog(this, "Vous avez perdu", "Fin de la partie", JOptionPane.INFORMATION_MESSAGE);
+        btnValider.setEnabled(false); // Désactiver le bouton Valider
+    } else {
+        // Passer à la ligne suivante uniquement si le jeu n'est pas terminé
+        ligneActuelle++;
+    }
 }
+
+
 
  
     /**
@@ -408,11 +431,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
         btn40.setBackground(new java.awt.Color(153, 204, 255));
         btn40.setText("jButton40");
-        btn40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn40ActionPerformed(evt);
-            }
-        });
         jPanel1.add(btn40);
 
         btn41.setBackground(new java.awt.Color(153, 204, 255));
@@ -451,13 +469,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40ActionPerformed
-        FenetrePrincipal.super.dispose();
-        Menu men3 = new Menu();
-        men3.setVisible(true);
-
-    }//GEN-LAST:event_btn40ActionPerformed
 
     private void btnValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValiderActionPerformed
 

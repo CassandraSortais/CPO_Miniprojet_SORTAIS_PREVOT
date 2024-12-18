@@ -425,9 +425,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="jButton40"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn40ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn41">
           <Properties>
