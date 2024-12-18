@@ -71,13 +71,6 @@ public class FenetrePrincipal extends javax.swing.JFrame {
             });
         }
 
-        // Initialiser et configurer le bouton "Valider"
-        btnValider = new JButton("Valider");
-        btnValider.setBounds(10, 10, 100, 30); // Positionner le bouton (à ajuster selon votre interface)
-        this.add(btnValider); // Ajouter le bouton à la fenêtre principale
-
-        // Ajouter un ActionListener au bouton "Valider"
-        btnValider.addActionListener(e -> validerCombinaison());
     }
 
   
