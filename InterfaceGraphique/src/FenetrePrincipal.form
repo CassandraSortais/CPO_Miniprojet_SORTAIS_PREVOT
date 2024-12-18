@@ -87,6 +87,9 @@
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="Bienvenue dans MasterMind !&#xa;Choisis 4 couleurs, clique sur Valider.&#xa;R&#xe9;essaie avec les indices jusqu&apos;&#xe0; &#xa;trouver la combinaison secr&#xe8;te &#xa;Bonne chance !"/>
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
